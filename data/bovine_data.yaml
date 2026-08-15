@@ -1,0 +1,7 @@
+path: /kaggle/input/datasets/lucyfirst/beef-cattle-behavior-data-set/Target detection dataset/Target detection dataset
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: cow
