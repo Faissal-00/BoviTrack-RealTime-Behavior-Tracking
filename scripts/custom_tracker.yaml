@@ -1,0 +1,18 @@
+# Tracker type
+tracker_type: bytetrack
+
+# Core thresholds (Tuned to eliminate single-frame ID flickering)
+track_high_thresh: 0.5
+track_low_thresh: 0.1
+new_track_thresh: 0.7       # Higher threshold prevents spawning temporary candidate IDs
+match_thresh: 0.7          # Slightly more forgiving spatial matching against Kalman drift
+
+# Memory buffer (Holds track alive during occlusion)
+track_buffer: 150
+
+# --- Required Ultralytics Backend Parameters ---
+fuse_score: True
+gmc_method: sparseOptFlow
+proximity_thresh: 0.5
+appearance_thresh: 0.25
+with_reid: False

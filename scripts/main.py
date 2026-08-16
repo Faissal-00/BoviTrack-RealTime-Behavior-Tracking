@@ -9,8 +9,9 @@ classifier_path = os.path.join(base_dir, 'final_models', 'classifier_best.pt')
 
 # Add your Day first, Night second
 video_filenames = ['day.mp4', 'night.mp4'] 
+# video_filenames = ['occlusion_test.mp4']
 input_video_paths = [os.path.join(base_dir, 'videos', v) for v in video_filenames]
-output_video_path = os.path.join(base_dir, 'videos', 'bovitrack_final_demo.mp4')
+output_video_path = os.path.join(base_dir, 'videos', 'bovitrack_demo.mp4')
 
 print("Loading AI Engines...")
 detector = YOLO(detector_path)
@@ -46,7 +47,7 @@ for video_path in input_video_paths:
         track_results = detector.track(
             frame, 
             persist=True, 
-            tracker="bytetrack.yaml", 
+            tracker="custom_tracker.yaml",  # Points to our fixed configuration
             conf=0.6,          
             iou=0.45,          
             verbose=False
